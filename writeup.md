@@ -1,11 +1,5 @@
 # **Finding Lane Lines on the Road** 
 
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
----
-
 ## Pipeline
 
 My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
