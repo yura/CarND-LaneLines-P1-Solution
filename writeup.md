@@ -26,17 +26,17 @@ My pipeline consisted of the following steps:
 
 6. Filtered out lines which don't look like lane ones.
 
-6.1. Divided all lines to left and right lists by the slope of the line. Lines with the negative slope are left lane line candidates. Lines with positive slope are right lane line candidate. Lines with slope = 0 are skipped.
+  1. Divided all lines to left and right lists by the slope of the line. Lines with the negative slope are left lane line candidates. Lines with positive slope are right lane line candidate. Lines with slope = 0 are skipped.
 
-6.2. Tried to filter out line with abnormal high or low values of slope. For left lines median value is -0.72, standard deviation is about 0.07. For right lines median is 0.634, stdev is 0.05. All lines with differences between slope of a line and median is more than 2 values are filtered out.
+  2. Tried to filter out line with abnormal high or low values of slope. For left lines median value is -0.72, standard deviation is about 0.07. For right lines median is 0.634, stdev is 0.05. All lines with differences between slope of a line and median is more than 2 values are filtered out.
 
-6.3. Got lines which are placed at the bottom of the image. Two from left lines list and two from right lines list, since each lane line consists of outer egde line and inner edge line.
+  3. Got lines which are placed at the bottom of the image. Two from left lines list and two from right lines list, since each lane line consists of outer egde line and inner edge line.
 
-6.4. Calculated middle line of the two edge lines by averaging slope and `x` coordinate.
+  4. Calculated middle line of the two edge lines by averaging slope and `x` coordinate.
 
 7. Added image with lines to the inital image.
 
-[result](./test_images_output/solidWhiteRight.jpg)
+![result](./test_images_output/solidWhiteRight.jpg)
 
 ### 2. 
 
