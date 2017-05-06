@@ -24,7 +24,7 @@ My pipeline consisted of the following steps:
 
 ![all-lines](./writeup-images/05-all_lines.jpg)
 
-6. Filtered out lines which don't look like lane ones.
+6. Filtered out lines which don't look like lane ones in `draw_lines()` function:
 
    1. Divided all lines to left and right lists by the slope of the line. Lines with the negative slope are left lane line candidates. Lines with positive slope are right lane line candidate. Lines with slope = 0 are skipped.
 
@@ -42,12 +42,22 @@ My pipeline consisted of the following steps:
 
 ![result](./test_images_output/solidWhiteRight.jpg)
 
-### 2. 
+## Shortcomings
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+1. Hardcoded values for ...
+
+2. Median and stdev values are required or some calibration.
+
+3. 
+
+Проблемы:
+смена полос
+условия освещения
+поворот камеры
 
 
-### 2. Identify potential shortcomings with your current pipeline
+Uphills, downhills, turns require logarithmic line approximation
+Changed light conditions such as shadows require more sophisticated algorithm as well
 
 
 One potential shortcoming would be what would happen when ... 
@@ -66,19 +76,4 @@ Another potential improvement could be to ...
 Please expand the reflection section a little more. "We would like you to share your thoughts on your lane finding pipeline... specifically, how could you imagine making your algorithm better / more robust? "
 
 
-Проблемы:
-смена полос
-условия освещения
-поворот камеры
-требуется калибровка камеры для того чтобы понять как прямо стоят колёса
-
-Creating a Great Writeup
----
-For this project, a great writeup should provide a detailed response to the "Reflection" section of the [project rubric](https://review.udacity.com/#!/rubrics/322/view). There are three parts to the reflection:
-
-1. Describe the pipeline
-
-2. Identify any shortcomings
-
-3. Suggest possible improvements
 
