@@ -44,36 +44,29 @@ My pipeline consisted of the following steps:
 
 ## Shortcomings
 
-1. Hardcoded values for ...
+1. To detect edges I used auto detection of low and high thresholds for the Canny call. Probably some tweaks required with different light conditions.
 
-2. Median and stdev values are required or some calibration.
+2. Hardcoded values are used for the Hough Transform call. These values need to be tweaked with different image resolution. 
 
-3. 
+3. If there is a rain or a snow fall we need to change r (distance resolution) and θ (angular resolution) of the Hough grid.
 
-Проблемы:
-смена полос
-условия освещения
-поворот камеры
+4. Region of interest is fragile place as well. Vertices for region of interest need to be changed if we change camera point of view.
 
+5. I use median and stdev of left and right slopes. These values need to be changed if camera position or point of view is changed.
 
-Uphills, downhills, turns require logarithmic line approximation
-Changed light conditions such as shadows require more sophisticated algorithm as well
+6. When car will try to change lane we will have vertical lane with slope close equals to 0. And all calculations where we need to divide by slope value will be broken.
 
+7. Uphills, downhills, turns require more sophisticated line detection algorithms.
 
-One potential shortcoming would be what would happen when ... 
+8. Shadows from the trees will break results from the Hough Transform part.
 
-Another shortcoming could be ...
-
-
-### 3. Suggest possible improvements to your pipeline
+## Possible improvements
 
 A possible improvement would be to ...
 
 Another potential improvement could be to ...
 
-
-
-Please expand the reflection section a little more. "We would like you to share your thoughts on your lane finding pipeline... specifically, how could you imagine making your algorithm better / more robust? "
+Please expand the reflection section a little more. "We would like you to share your thoughts on your lane finding pipeline... specifically, how could you imagine making your algorithm better / more robust?
 
 
 
