@@ -33,6 +33,10 @@ My pipeline consisted of the following steps:
    3. Got lines which are placed at the bottom of the image. Two from left lines list and two from right lines list, since each lane line consists of outer egde line and inner edge line.
 
    4. Calculated middle line of the two edge lines by averaging slope and `x` coordinate.
+   
+   5. Extrapolated both lane lines to the bottom of an image.
+   
+   6. Extrapolated both lane lines to the top (down to the lowest detect value of `y` coordinate).
 
 7. Added image with lines to the inital image.
 
