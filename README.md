@@ -28,6 +28,8 @@ More info at [writeup.md](writeup.md).
 
 ## How to Run the Code
 
+Make sure you have installed `conda` or `docker` as described at [CarND-Term1-Starter-Kit](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md)
+
 1. Clone repository
     ```
     git clone https://github.com/yura/CarND-LaneLines-P1-Solution.git
