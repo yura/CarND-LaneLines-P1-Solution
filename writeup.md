@@ -42,13 +42,13 @@ My pipeline consisted of the following steps:
 
 ![result](./test_images_output/solidWhiteRight.jpg)
 
-## Shortcomings
+## Shortcomings and possible improvements
 
 1. To detect edges I used auto detection of low and high thresholds for the Canny call. Probably some tweaks required with different light conditions.
 
 2. Hardcoded values are used for the Hough Transform call. These values need to be tweaked with different image resolution. 
 
-3. If there is a rain or a snow fall we need to change r (distance resolution) and θ (angular resolution) of the Hough grid.
+3. Difficult weather conditions such as fog, rain and snow breaks Hough Transform as well.
 
 4. Region of interest is fragile place as well. Vertices for region of interest need to be changed if we change camera point of view.
 
@@ -62,11 +62,10 @@ My pipeline consisted of the following steps:
 
 ## Possible improvements
 
-A possible improvement would be to ...
+* We can add some ML to the algorithm to teach and use best suitable values instead of hardcoded ones.
 
-Another potential improvement could be to ...
+* I think there should be different profiles for certain weather and light conditions, e.g. if there is a rain or a snow we need change kernel at the denoise step and probably increase r (distance resolution) and θ (angular resolution) of the Hough grid.
 
-Please expand the reflection section a little more. "We would like you to share your thoughts on your lane finding pipeline... specifically, how could you imagine making your algorithm better / more robust?
+* We can use generalized version of Hough Transform to detect curve lane lines.
 
-
-
+* As for shadows we will have more horizontal edges. We can filter out such edges with some stat data, e.g. normal value of the slope. 
