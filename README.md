@@ -19,14 +19,16 @@ More info at [writeup.md](writeup.md).
 
 * `README.md` - this file
 * `P1.ipynb` - IPython notebook with code which implements a pipeline to find lane lines
-* `test_images` - directory with test images
-* `test_images_output` - directory with processed test images
-* `test_videos` - directory with test videos
-* `test_videos_output` - directory with processed test videos
+* `test_images/` - directory with test images
+* `test_images_output/` - directory with processed test images
+* `test_videos/` - directory with test videos
+* `test_videos_output/` - directory with processed test videos
 * `writeup.md` - brief report with pipeline used to find lane lines 
-* `writeup-images` - images to describe pipeline
+* `writeup-images/` - images to describe pipeline
 
 ## How to Run the Code
+
+Make sure you have installed `conda` or `docker` as described at [CarND-Term1-Starter-Kit](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md)
 
 1. Clone repository
     ```

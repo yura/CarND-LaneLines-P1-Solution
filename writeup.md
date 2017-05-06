@@ -24,7 +24,7 @@ My pipeline consisted of the following steps:
 
 ![all-lines](./writeup-images/05-all_lines.jpg)
 
-6. Filtered out lines which don't look like lane ones.
+6. Filtered out lines which don't look like lane ones in `draw_lines()` function:
 
    1. Divided all lines to left and right lists by the slope of the line. Lines with the negative slope are left lane line candidates. Lines with positive slope are right lane line candidate. Lines with slope = 0 are skipped.
 
@@ -42,43 +42,30 @@ My pipeline consisted of the following steps:
 
 ![result](./test_images_output/solidWhiteRight.jpg)
 
-### 2. 
+## Shortcomings and possible improvements
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+1. To detect edges I used auto detection of low and high thresholds for the Canny call. Probably some tweaks required with different light conditions.
 
+2. Hardcoded values are used for the Hough Transform call. These values need to be tweaked with different image resolution. 
 
-### 2. Identify potential shortcomings with your current pipeline
+3. Difficult weather conditions such as fog, rain and snow breaks Hough Transform as well.
 
+4. Region of interest is fragile place as well. Vertices for region of interest need to be changed if we change camera point of view.
 
-One potential shortcoming would be what would happen when ... 
+5. I use median and stdev of left and right slopes. These values need to be changed if camera position or point of view is changed.
 
-Another shortcoming could be ...
+6. When car will try to change lane we will have vertical lane with slope close equals to 0. And all calculations where we need to divide by slope value will be broken.
 
+7. Uphills, downhills, turns require more sophisticated line detection algorithms.
 
-### 3. Suggest possible improvements to your pipeline
+8. Shadows from the trees will break results from the Hough Transform part.
 
-A possible improvement would be to ...
+## Possible improvements
 
-Another potential improvement could be to ...
+* We can add some ML to the algorithm to teach and use best suitable values instead of hardcoded ones.
 
+* I think there should be different profiles for certain weather and light conditions, e.g. if there is a rain or a snow we need change kernel at the denoise step and probably increase r (distance resolution) and θ (angular resolution) of the Hough grid.
 
+* We can use generalized version of Hough Transform to detect curve lane lines.
 
-Please expand the reflection section a little more. "We would like you to share your thoughts on your lane finding pipeline... specifically, how could you imagine making your algorithm better / more robust? "
-
-
-Проблемы:
-смена полос
-условия освещения
-поворот камеры
-требуется калибровка камеры для того чтобы понять как прямо стоят колёса
-
-Creating a Great Writeup
----
-For this project, a great writeup should provide a detailed response to the "Reflection" section of the [project rubric](https://review.udacity.com/#!/rubrics/322/view). There are three parts to the reflection:
-
-1. Describe the pipeline
-
-2. Identify any shortcomings
-
-3. Suggest possible improvements
-
+* As for shadows we will have more horizontal edges. We can filter out such edges with some stat data, e.g. normal value of the slope. 
