@@ -36,7 +36,7 @@ My pipeline consisted of the following steps:
 
 7. Added image with lines to the inital image.
 
-[result](./test_images_output/solidWhiteRight.jpg.jpg)
+[result](./test_images_output/solidWhiteRight.jpg)
 
 ### 2. 
 
