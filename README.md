@@ -25,6 +25,7 @@ More info at [writeup.md](writeup.md).
 * `test_videos_output/` - directory with processed test videos
 * `writeup.md` - brief report with pipeline used to find lane lines 
 * `writeup-images/` - images to describe pipeline
+* `FEEDBACK.md` - file with feedback
 
 ## How to Run the Code
 
